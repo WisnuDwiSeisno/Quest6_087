@@ -33,7 +33,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.font.FontWeight.Companion.Light
-import androidx.compose.ui.tooling.data.EmptyGroup.data
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project8.R
@@ -152,9 +151,15 @@ fun RencanaStudyView(
                     )
                 }
                 Spacer(modifier = Modifier.padding(8.dp))
-                Row (modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-                    Button(onClick = {onSubmitButtonClicked}) {
-                        
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Button(onClick = { onBackButtonClicked() }) {
+                        Text(text = "Kembali")
+                        Button(onClick = { onSubmitButtonClicked(listData) }) {
+                            Text(text = "Lanjut")
+                        }
                     }
                 }
             }

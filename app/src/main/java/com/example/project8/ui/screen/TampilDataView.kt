@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.Icon
@@ -50,15 +51,19 @@ fun TampilDataView(
                 Modifier.size(50.dp)
             )
             Spacer(modifier = Modifier.padding(16.dp))
-            Column (Modifier.weight(1f)) {
-                Text(text = mahasiswa.Nama,
+            Column(Modifier.weight(1f)) {
+                Text(
+                    text = mahasiswa.Nama,
                     fontWeight = FontWeight.Bold,
                     fontSize = 12.sp,
-                    color = Color.White)
-                Text(text = mahasiswa.NIM,
+                    color = Color.White
+                )
+                Text(
+                    text = mahasiswa.NIM,
                     fontWeight = FontWeight.Light,
                     fontSize = 12.sp,
-                    color = Color.White)
+                    color = Color.White
+                )
             }
             Box {
                 Icon(
@@ -68,5 +73,13 @@ fun TampilDataView(
                 )
             }
         }
+        Box(
+            modifier = Modifier
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(topEnd = 15.dp, topStart = 15.dp)
+                )
+                .fillMaxWidth()
+        )
     }
 }

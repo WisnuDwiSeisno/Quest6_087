@@ -2,6 +2,7 @@ package com.example.project8.ui.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -59,15 +60,22 @@ fun RencanaStudyView(
                     .size(50.dp)
             )
             Spacer(Modifier.padding(start = 16.dp))
-            Column (Modifier.weight(1f)) {
-                Text(text = mahasiswa.Nama,
+            Column(Modifier.weight(1f)) {
+                Text(
+                    text = mahasiswa.Nama,
                     fontWeight = Bold,
                     fontSize = 15.sp,
-                    color = Color.White)
-                Text(text = mahasiswa.NIM,
+                    color = Color.White
+                )
+                Text(
+                    text = mahasiswa.NIM,
                     fontWeight = Light,
                     fontSize = 12.sp,
-                    color = Color.White)
+                    color = Color.White
+                )
+            }
+            Box {
+
             }
         }
     }

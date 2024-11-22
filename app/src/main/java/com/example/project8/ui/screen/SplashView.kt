@@ -20,7 +20,9 @@ import androidx.compose.ui.unit.dp
 import com.example.project8.R
 
 @Composable
-fun SplashView() {
+fun SplashView(
+    onClickButton: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -34,7 +36,7 @@ fun SplashView() {
             Modifier.size(150.dp)
         )
         Spacer(modifier = Modifier.padding(5.dp))
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = { onClickButton()}) {
             Text(text = "Mulai")
         }
     }

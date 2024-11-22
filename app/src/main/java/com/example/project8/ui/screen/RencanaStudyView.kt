@@ -157,9 +157,9 @@ fun RencanaStudyView(
                 ) {
                     Button(onClick = { onBackButtonClicked() }) {
                         Text(text = "Kembali")
-                        Button(onClick = { onSubmitButtonClicked(listData) }) {
-                            Text(text = "Lanjut")
-                        }
+                    }
+                    Button(onClick = { onSubmitButtonClicked(listData) }, enabled = checked) {
+                        Text(text = "Lanjut")
                     }
                 }
             }

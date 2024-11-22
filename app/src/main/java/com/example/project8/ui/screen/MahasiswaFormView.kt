@@ -41,7 +41,7 @@ import com.example.project8.R
 
 @Composable
 fun MahasiswaFormView(
-    modifier: Modifier, onSubmitButtonClicked: (MutableList<String>) -> Unit,
+    onSubmitButtonClicked: (MutableList<String>) -> Unit,
     onBackButtonCLicked: () -> Unit
 ) {
     var name by remember { mutableStateOf("") }
@@ -89,7 +89,7 @@ fun MahasiswaFormView(
         ) {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxSize()
                     .padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(

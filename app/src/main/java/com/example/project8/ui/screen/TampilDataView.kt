@@ -81,39 +81,40 @@ fun TampilDataView(
                     color = Color.White,
                     shape = RoundedCornerShape(topEnd = 15.dp, topStart = 15.dp)
                 )
-                .fillMaxWidth()
-        )
-    }
-    Column(
-        Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = "Data Diri",
-            fontWeight = FontWeight.Bold, fontSize = 14.sp
-        )
-        Spacer(modifier = Modifier.padding(8.dp))
-        CardSection(judulParam = "Nama", isiParam = mahasiswa.Nama)
-        Spacer(modifier = Modifier.padding(4.dp))
-        CardSection(judulParam = "NIM", isiParam = mahasiswa.NIM)
-        Spacer(modifier = Modifier.padding(4.dp))
-        CardSection(judulParam = "Email", isiParam = mahasiswa.Email)
-        Spacer(modifier = Modifier.padding(4.dp))
-        CardSection(judulParam = "Matakuliah", isiParam = rencanaStudi.mataKuliah)
-        Spacer(modifier = Modifier.padding(4.dp))
-        CardSection(judulParam = "Kelas", isiParam = rencanaStudi.kelas)
-        Spacer(modifier = Modifier.padding(16.dp))
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
+                .fillMaxSize()
         ) {
-            Button(
-                onClick = { onBackButtonClicked() }
+            Column(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text("Kembali ke Halaman Utama")
+                Text(
+                    text = "Data Diri",
+                    fontWeight = FontWeight.Bold, fontSize = 16.sp
+                )
+                Spacer(modifier = Modifier.padding(8.dp))
+                CardSection(judulParam = "Nama", isiParam = mahasiswa.Nama)
+                Spacer(modifier = Modifier.padding(4.dp))
+                CardSection(judulParam = "NIM", isiParam = mahasiswa.NIM)
+                Spacer(modifier = Modifier.padding(4.dp))
+                CardSection(judulParam = "Email", isiParam = mahasiswa.Email)
+                Spacer(modifier = Modifier.padding(4.dp))
+                CardSection(judulParam = "Matakuliah", isiParam = rencanaStudi.mataKuliah)
+                Spacer(modifier = Modifier.padding(4.dp))
+                CardSection(judulParam = "Kelas", isiParam = rencanaStudi.kelas)
+                Spacer(modifier = Modifier.padding(16.dp))
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Button(
+                        onClick = { onBackButtonClicked() }
+                    ) {
+                        Text("Kembali ke Halaman Utama")
+                    }
+                }
             }
         }
     }

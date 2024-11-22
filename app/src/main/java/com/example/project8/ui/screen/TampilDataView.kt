@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -89,27 +90,42 @@ fun TampilDataView(
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Data Diri",
-            fontWeight = FontWeight.Bold, fontSize = 14.sp)
+        Text(
+            text = "Data Diri",
+            fontWeight = FontWeight.Bold, fontSize = 14.sp
+        )
         Spacer(modifier = Modifier.padding(8.dp))
-        CardSection(judulParam = "Nama" , isiParam = mahasiswa.Nama)
+        CardSection(judulParam = "Nama", isiParam = mahasiswa.Nama)
         Spacer(modifier = Modifier.padding(4.dp))
-        CardSection(judulParam = "NIM" , isiParam = mahasiswa.NIM)
+        CardSection(judulParam = "NIM", isiParam = mahasiswa.NIM)
         Spacer(modifier = Modifier.padding(4.dp))
-        CardSection(judulParam = "Email" , isiParam = mahasiswa.Email)
+        CardSection(judulParam = "Email", isiParam = mahasiswa.Email)
         Spacer(modifier = Modifier.padding(4.dp))
-        CardSection(judulParam = "Matakuliah" , isiParam = rencanaStudi.mataKuliah)
+        CardSection(judulParam = "Matakuliah", isiParam = rencanaStudi.mataKuliah)
         Spacer(modifier = Modifier.padding(4.dp))
-        CardSection(judulParam = "Kelas" , isiParam = rencanaStudi.kelas)
+        CardSection(judulParam = "Kelas", isiParam = rencanaStudi.kelas)
         Spacer(modifier = Modifier.padding(16.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Button(
+                onClick = { onBackButtonClicked() }
+            ) {
+                Text("Kembali ke Halaman Utama")
+            }
+        }
     }
 }
 
 @Composable
-fun CardSection(judulParam:String, isiParam:String){
-    Column{
-        Row (
-            modifier = Modifier.fillMaxWidth().padding(8.dp),
+fun CardSection(judulParam: String, isiParam: String) {
+    Column {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
 
         ) {

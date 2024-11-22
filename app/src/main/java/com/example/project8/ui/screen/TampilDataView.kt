@@ -2,6 +2,7 @@ package com.example.project8.ui.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -81,5 +82,40 @@ fun TampilDataView(
                 )
                 .fillMaxWidth()
         )
+    }
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = "Data Diri",
+            fontWeight = FontWeight.Bold, fontSize = 14.sp)
+        Spacer(modifier = Modifier.padding(8.dp))
+        CardSection(judulParam = "Nama" , isiParam = mahasiswa.Nama)
+        Spacer(modifier = Modifier.padding(4.dp))
+        CardSection(judulParam = "NIM" , isiParam = mahasiswa.NIM)
+        Spacer(modifier = Modifier.padding(4.dp))
+        CardSection(judulParam = "Email" , isiParam = mahasiswa.Email)
+        Spacer(modifier = Modifier.padding(4.dp))
+        CardSection(judulParam = "Matakuliah" , isiParam = rencanaStudi.mataKuliah)
+        Spacer(modifier = Modifier.padding(4.dp))
+        CardSection(judulParam = "Kelas" , isiParam = rencanaStudi.kelas)
+        Spacer(modifier = Modifier.padding(16.dp))
+    }
+}
+
+@Composable
+fun CardSection(judulParam:String, isiParam:String){
+    Column{
+        Row (
+            modifier = Modifier.fillMaxWidth().padding(8.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly
+
+        ) {
+            Text(judulParam, modifier = Modifier.weight(0.8f))
+            Text(":", modifier = Modifier.weight(0.2f))
+            Text(isiParam, modifier = Modifier.weight(2f))
+        }
     }
 }

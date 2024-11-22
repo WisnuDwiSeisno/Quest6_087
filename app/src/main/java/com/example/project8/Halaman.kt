@@ -1,6 +1,7 @@
 package com.example.project8
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 
 enum class Halaman{
     Splash,
@@ -10,6 +11,6 @@ enum class Halaman{
 }
 
 @Composable
-fun MahasiswaApp(){
+fun MahasiswaApp(modifier: Modifier = Modifier,){
 
 }
